@@ -16,7 +16,11 @@
 </head>
 <body>
     <div id='map'></div>
+    Pan to <a href="javascript:Nashik()">Nashik, Maharashtra</a><br>
 
+    <a href="javascript:zoomOut()">Zoom out to level 10</a><br>
+
+    <button id="PuneBtn">Visit Pune, Maharashtra</button>
 
     <script>
         var map = L.map('map').setView([18.975, 72.825833], 7.4);
@@ -37,6 +41,21 @@
                 .bindPopup(towns[i][2])
                 .addTo(map);
         }
+        
+                //Pan to Nashik
+        function Nashik() {
+            map.panTo(new L.LatLng(20.0112475, 73.7902364));
+        }
+        //set Zoom
+        function zoomOut() {
+            map.setZoom(10);
+        };
+        //add an event listener for a click event on the button
+        document.getElementById("PuneBtn").addEventListener("click", Pune);
+        //Pune Maharashtra function
+        function Pune() {
+            map.setView(new L.LatLng(18.5203062, 73.8543185), 13);
+        };
         </script>
 </body>
 </html>
