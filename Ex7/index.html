@@ -1,0 +1,64 @@
+<html>
+<head>
+    
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+
+    <style>
+        #map {
+            width: 1000px;
+            height: 1000px;
+             
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id='map'></div>
+   
+    <script>
+    
+    
+        var map = L.map('map').setView([18.975, 72.825833], 12);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+             }).addTo(map);
+       
+        L.marker([18.975, 72.825833]).addTo(map)
+            .bindPopup("Mumbai, Maharashtra")
+            ;
+            
+            
+            var exampleMarker = new L.circleMarker([18.921836 ,72.834705], {
+    radius: 8, 
+	fillColor: 'orange',
+	color: "black",  
+	weight: 1, 
+	opacity: 1, 
+	fillOpacity:0.6
+}).bindPopup("Gateway of India").addTo(map);
+
+ L.circle([18.938917, 72.825722], {
+	radius: 100,
+	fill: true, 
+	color: 'black', 
+    weight: 1, 
+	fillColor: 'lightgreen',
+	fillOpacity: 0.5  
+ }).bindPopup("Wankhede Stadium").addTo(map);
+ 
+ var latlngs = [
+   [ [19.088630, 72.847658],
+    [19.088951, 72.880582]],
+    [[19.098534, 72.857149],
+    [19.080463, 72.876780]]
+];
+var polyline = L.polyline(latlngs, {color: 'red',weight: '4'}).bindPopup("Mumbai International Airport").addTo(map);
+
+
+var latlngs = [[19.088840, 72.843819],[19.102620, 72.855203],[19.103274, 72.880403],[19.079007, 72.878798]];
+var polygon = L.polygon(latlngs, {color: 'black', weight: '2', fillColor:'yellow', fillOpacity:'0.4'}).bindPopup("Mumbai International Airport").addTo(map);
+     
+   </script>
+</body>
+</html>
