@@ -1,0 +1,115 @@
+<html>
+<head>
+    
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+
+    <style>
+        #map {
+            width: 650px;
+            height: 650px;
+             background-color: GRAY; 
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div id='map'></div>
+    <p> <b><u>Zoom to India</u></b></p>
+<button id="IndiaBtn">India</button>
+
+   <p> <b><u>Zoom to Mumbai</u></b></p>
+<button id="MumbaiBtn">Mumbai</button>
+
+   <p> <b><u>Zoom to Bangalore</u></b></p>
+<button id="BangaloreBtn">Bangalore</button>
+
+   <p> <b><u>Zoom to NewDelhi</u></b></p>
+<button id="NewDelhiBtn">NewDelhi</button>
+
+<p><b><u>Click the button to get your coordinates.</u></b></p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+
+
+    <script>
+        var map = L.map('map').setView([21.14985, 79.080598], 2);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+                        var exampleMarker = new L.circleMarker([18.978, 72.825836], {
+    radius: 8, 
+	fillColor: 'orange',
+	color: "black",  
+	weight: 1, 
+	opacity: 1, 
+	fillOpacity:0.6
+}).bindPopup("Mumbai").addTo(map);
+           
+           
+                            var exampleMarker = new L.circleMarker([12.983333, 77.583333], {
+    radius: 8, 
+	fillColor: 'orange',
+	color: "black",  
+	weight: 1, 
+	opacity: 1, 
+	fillOpacity:0.6
+    
+}).bindPopup("Bangalore").addTo(map);
+
+                            var exampleMarker = new L.circleMarker([28.613889, 77.208889], {
+    radius: 8, 
+	fillColor: 'orange',
+	color: "black",  
+	weight: 1, 
+	opacity: 1, 
+	fillOpacity:0.6
+}).bindPopup("New Delhi").addTo(map);
+
+
+document.getElementById("IndiaBtn").addEventListener("click", India);
+        function India() {
+            map.setView(new L.LatLng(24.5, 79.080598), 4.5);
+        };
+        
+       
+
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+document.getElementById("MumbaiBtn").addEventListener("click", Mumbai);
+        function Mumbai() {
+            map.setView(new L.LatLng(18.978, 72.825836), 11);
+        };
+   
+   document.getElementById("BangaloreBtn").addEventListener("click", Bangalore);
+        function Bangalore() {
+            map.setView(new L.LatLng(12.983333, 77.583333), 11);
+        };
+   
+      document.getElementById("NewDelhiBtn").addEventListener("click", NewDelhi);
+        function NewDelhi() {
+            map.setView(new L.LatLng(28.613889, 77.208889), 11);
+        };
+   
+        </script>
+</body>
+</html>
