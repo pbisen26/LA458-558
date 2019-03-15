@@ -156,26 +156,7 @@ L.geoJSON(myGeoJSON, {
 
 
 
-var legend = L.control({
-  position: 'bottomleft'
-	//Possible values are 'topleft', 'topright', 'bottomleft' or 'bottomright'
-});
 
-legend.onAdd = function(map) {
-
-  var div = L.DomUtil.create('div', 'info legend'),
-    Zones = ['Warm Desert Climate,red', 'Warm Semi-Arid Climate', 'Tropical Savannah Climate','Monsoon Climate', 'Humid Sub-Tropical Climate','Humid Sub-Tropical Oceanic Highland Climate','Cold Deser Climate'],
-   labels = [''];
-
-  // loop through items and generate a label with a colored square for each
-  for (var i = 0; i < Zones.length; i++) {
-    div.innerHTML +=
-      '<i style="background:' + getColor(Zones[i]) + ' "></i> ' +
-      Zones[i] + (Zones ? '' + '<br>' : '');
-  }
-
-  return div;
-};
 </script>
 </body>
 </html>
