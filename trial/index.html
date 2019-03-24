@@ -154,8 +154,20 @@ var iconMarkerURL = "http://www.googlemapsmarkers.com/v1/";
 
 
 L.geoJSON(myGeoJSON, {
- 
+    style: function(feature) {
+        switch (feature.properties.color) {
+            case 'red': return {color: "red"};
+            case 'orange':   return {color: "orange"};
+        case 'lightblue': return {color: "lightblue"};
+         case 'light blue': return {color: "lightblue"};
+          case 'blue':   return {color: "blue"};
+             case 'light green': return {color: "lightgreen"};
+         case 'green': return {color: "green"};
+        case 'pink': return {color: "pink"};
+        }
+    }
 }).addTo(map);
+
 
 
 </script>
