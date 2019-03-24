@@ -141,7 +141,7 @@ var iconMarkerURL = "http://www.googlemapsmarkers.com/v1/";
 
 
 
-L.geoJSON(myGeoJSON).addTo(map);
+
 L.geoJSON(myGeoJSON, {
     style: function(feature) {
         switch (feature.properties.color) {
