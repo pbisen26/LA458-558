@@ -113,7 +113,7 @@ var myGeoJSON = {
         "stroke": "#008000",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "fill": "green",
+        "fill": "#008000",
         "fill-opacity": 0.5
       },
       "geometry": {
@@ -346,7 +346,7 @@ var myGeoJSON = {
         "stroke": "#ff8000",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "fill": "orange",
+        "fill": "#ff8000",
         "fill-opacity": 0.5
       },
       "geometry": {
@@ -591,7 +591,7 @@ var myGeoJSON = {
         "stroke": "#ff0000",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "fill": "red",
+        "fill": "#ff0000",
         "fill-opacity": 0.5
       },
       "geometry": {
@@ -883,12 +883,8 @@ var iconMarkerURL = "http://www.googlemapsmarkers.com/v1/";
 
 L.geoJSON(myGeoJSON, {
     style: function(feature) {
-    switch (feature.properties.color) {
-    case 'green': return {color: "green"};   
-    case 'orange':   return {color: "orange"};
-    case 'red': return {color: "red"};
-    }
-    }
+    switch (feature.properties.color) 
+ }
 }).addTo(map);
 
 
