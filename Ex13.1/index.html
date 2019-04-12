@@ -784,7 +784,21 @@ var map = L.map('map', {
 
 
 //Adding JSON to map
-
+var iconMarkerURL = "http://www.googlemapsmarkers.com/v1/";
+ for (var i = 0; i < cities.length; i++) {
+  //access the data by index i   for example 
+  console.log(cities[i].name);
+  
+  var marker = L.marker([cities[i].lat, cities[i].long], {    
+    icon: L.icon({
+      iconUrl: iconMarkerURL + cities[i].iconColor,
+      iconSize:[10, 17],
+      iconAnchor:[5, 17],
+      popupAnchor:[0, -20]
+    }),
+    title: cities[i].name
+  }).bindPopup("<b>"+cities[i].name+"</b><br>"+cities[i].popupText+".").addTo(map);
+}
 
 
 
