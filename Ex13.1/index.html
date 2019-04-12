@@ -45,7 +45,7 @@ var myGeoJSON = {
     {
       "type": "Feature",
       "properties": {
-        "stroke": "green",
+        "stroke": "#008000",
         "stroke-width": 2,
         "stroke-opacity": 1
       },
@@ -66,7 +66,7 @@ var myGeoJSON = {
     {
       "type": "Feature",
       "properties": {
-        "stroke": "orange",
+        "stroke": "#ff8000",
         "stroke-width": 2,
         "stroke-opacity": 1
       },
@@ -87,7 +87,7 @@ var myGeoJSON = {
     {
       "type": "Feature",
       "properties": {
-        "stroke": "red",
+        "stroke": "#ff0000",
         "stroke-width": 2,
         "stroke-opacity": 1
       },
@@ -141,9 +141,9 @@ var map = L.map('map', {
 L.geoJSON(myGeoJSON, {
     style: function(feature) {
         switch (feature.properties.color) {
-            case 'red': return {color: "red"};
-            case 'orange':   return {color: "orange"};
-  case 'green': return {color: "green"};
+            case '#008000': return {color: "red"};
+            case '#ff8000':   return {color: "orange"};
+  case '#ff0000': return {color: "green"};
        
         }
     }
