@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="LA 458/558 26b Turf.JS Examples 2018">
+	
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>LA 458/558 Turf JS Examples</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+	
+	<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+	
+	
+<script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+	
+<script src="https://npmcdn.com/@turf/turf@3.5.1/turf.min.js"></script>	
+	
+ </head>
+<body>
+<div id="mapid" style="width: 600px; height: 400px;"></div>	 
+<img src="console.PNG" alt="console" >
+
+  <script id="jsbin-javascript">
+console.clear();
+
+
+//JSON of the line
+var myLine = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.828369140625,
+            18.954350047559018
+          ],
+          [
+            72.85720825195312,
+            19.059521889847343
+          ],
+          [
+            72.86544799804688,
+            19.158141038187704
+          ],
+          [
+            72.85720825195312,
+            19.291701823721112
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+var myPolygon = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.96707153320312,
+              19.291701823721112
+            ],
+            [
+              72.9107666015625,
+              19.283924564443133
+            ],
+            [
+              72.8558349609375,
+              19.316327373141174
+            ],
+            [
+              72.82424926757812,
+              19.312439374994288
+            ],
+            [
+              72.784423828125,
+              19.30595917262483
+            ],
+            [
+              72.7789306640625,
+              19.27355431084046
+            ],
+            [
+              72.7789306640625,
+              19.22298993058183
+            ],
+            [
+              72.784423828125,
+              19.145168196205297
+            ],
+            [
+              72.82012939453125,
+              19.09975522215211
+            ],
+            [
+              72.8173828125,
+              19.024471999857905
+            ],
+            [
+              72.7899169921875,
+              18.953051214527225
+            ],
+            [
+              72.8118896484375,
+              18.917978902570848
+            ],
+            [
+              72.83935546875,
+              18.96214283338193
+            ],
+            [
+              72.86819458007811,
+              19.001101297690546
+            ],
+            [
+              72.92037963867188,
+              18.997205861382188
+            ],
+            [
+              72.96157836914061,
+              19.03226150374902
+            ],
+            [
+              72.95608520507812,
+              19.088075584093136
+            ],
+            [
+              72.9986572265625,
+              19.216506191361127
+            ],
+            [
+              72.96707153320312,
+              19.291701823721112
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+var from = turf.point([72.828369140625,18.954350047559018]);
+var to = turf.point([72.85720825195312,19.291701823721112]);
+var options = {units: 'miles'};
+
+
+
+
+//Can be used to highlight the major rail network in mt Final Project
+var length = turf.lineDistance(myLine, 'miles');
+console.log("myLine = "+ length + " miles");
+
+//Can be used to calculate areas of increased landmass of Mumbai in my Final Project
+var area = turf.area(myPolygon);
+	console.log(area + " sq meters");
+	console.log(area * 0.000000386102158542 + " sq miles");
+
+//Can be used to calculate distance between 2 points
+var distance = turf.distance(from, to);
+ console.log(distance + " miles");
+
+
+//Can be used to calculate/demonstrate the centre of land mass
+var center = turf.centerOfMass(myPolygon);
+ console.log(center);
+
+
+
+var mapCenter = L.latLng(18.975, 72.825833);
+
+	
+var map = L.map('mapid').setView(mapCenter, 9.5);
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		maxZoom: 18,
+		attribution: ''
+	}).addTo(map);
+
+
+
+var myStyle = {
+    "color": "green",
+    "weight": 3,
+    "opacity": 0.65
+};
+
+
+
+L.geoJSON(myLine, {
+    style: myStyle
+}).addTo(map);
+
+L.geoJSON(myPolygon, {
+    style: myStyle
+}).addTo(map);
+
+
+
+</script>
+</body>
+</html>
