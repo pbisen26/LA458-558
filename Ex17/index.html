@@ -41,6 +41,8 @@ body:after {
 <div id="map">--</div>
  
  console.clear();
+  
+  <script>
 
 //Base Layers Added
 var OSM = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -87,6 +89,6 @@ var baseMaps = {
 
 var overlayMaps = {};
 L.control.layers(baseMaps, overlayMaps).addTo(map);
-   
+  </script>   
 </body>
 </html>
