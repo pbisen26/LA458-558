@@ -1,0 +1,92 @@
+
+<html>
+<head>
+<meta name="description" content="Leaflet Font Awesome and Kendyl's question">
+<meta charset="utf-8"/>
+<title>Mapbox graphic trial (State boundary,waterways,highways, national parks) </title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lvoogdt/Leaflet.awesome-markers@2.0.2/dist/leaflet.awesome-markers.css" />
+<script src="https://cdn.jsdelivr.net/gh/lvoogdt/Leaflet.awesome-markers@2.0.2/dist/leaflet.awesome-markers.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+#map {
+  width:700px;
+  height: 600px;
+  margin: 0 auto; padding: 10px;
+  border: solid;
+  border-color: black; 
+  border-width: 10px;
+}
+
+body:after {
+  background: url('https://kendyl66.github.io/LA458-558/Assign3/IMG_9275.HEIC');
+  content: "";
+  opacity: 0.15;
+  position:fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -100;   
+  width:auto;
+  height: 100%;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+<div id="map">--</div>
+ 
+ console.clear();
+
+//Base Layers Added
+var OSM = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+});
+var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+ 
+var myMapbox = L.tileLayer('https://api.mapbox.com/styles/v1/pbisen/cjv3zwjt54oh81fs3l1k3rweg/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGJpc2VuIiwiYSI6ImNqc3dxaDR6dzBraWc0M2xoaDM4djh5d3cifQ.skofBPnymcilrnqBhS_9Hg', {
+attribution: 'Some author info'
+});
+
+
+
+
+
+//overlay layers
+var Stamen_TonerLines = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lines/{z}/{x}/{y}{r}.{ext}', {
+  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  subdomains: 'abcd',
+  minZoom: 0,
+  maxZoom: 20,
+  ext: 'png'
+});
+
+var OpenRailwayMap = L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenRailwayMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});
+
+//Create Map
+
+var map = L.map('map', {
+center: [42.0, -93.634],
+zoom: 9,
+layers: [myMapbox]
+});
+
+var baseMaps = {
+"OpenStreetMap": OSM,
+"My latests Mapbox": myMapbox
+};
+
+var overlayMaps = {};
+L.control.layers(baseMaps, overlayMaps).addTo(map);
+   
+</body>
+</html>
