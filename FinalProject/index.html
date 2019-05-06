@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+ <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<style>
+	
+  html,body{
+  background-color: black;
+  font-family: Nirmala UI;
+}
+
+#container{
+  background-color:white;
+  width: 1200px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#header{
+  background-color: #F0AA6C;
+    text-align:center;
+}
+h1{
+  margin:0;
+}
+#container1{
+  padding: 15px;
+   background-color: #CACFD2;
+  
+}
+#7islands{
+width: 400;
+	float: left;
+  background-color: #CACFD2;
+}
+
+#map {
+			width: 600px;
+			height: 600px;
+  float :right;
+  background-color: #CACFD2;
+		}
+
+#container5{
+  clear:both;
+  padding: 15px;
+   background-color: #CACFD2;
+  
+}
+
+#container7{
+  clear:both;
+  padding: 15px;
+   background-color: #CACFD2;
+  
+}
+
+#container9{
+  width:400;
+  float:right;
+}
+
+{
+ clear:both;
+  width:600;
+  float:left;
+  text-align:center;
+}
+
+#heatmap{
+  clear:both;
+width: 400;
+	float: left;
+  background-color: #CACFD2;
+}
+ 
+#container10{
+clear:both;
+  width: 800;
+  float: right;
+  background-color: #CACFD2;
+}
+  </style>
+
+<div id='container'>
+  
+<div id='header'>
+  <h1>URBANIZATION OF MUMBAI POST INDEPENDENCE </h1> 
+</div>  
+  
+<div id='container1'>  
+<div id='info'>
+<p>Mumbai was a set of 7 islands along the Western coast of India mainly occupied by fishermen which were then colonized by the Portuguese in 1600s because they considered these islands as an ideal refuge from land attacks. Then they developed the islands as a port / Harbor to establish Trade routes and factories on these islands. These docks also served as a Shipping yard/warehouse to repair ships during their sails.Following this period, these islands were gifted to the British king in the form of a Dowry, which the king leased to the East India company. With a Harbor already built, the east India company observed that Mumbai had a potential to develop as a Trading Capital with the kind of Sea Network it had. In 1845-1853, these 7 islands were merged into a unified land mass highlighted in orange in the map below. The Opening of the Suez Canal in 1869 also meant that sea connections between Mumbai and the rest of the world were now open(blue).</p>
+</div>   
+</div>
+
+<div id='container2'>
+<div id='container3'>	
+<img src="7islands.png" alt="7islands" >    
+</div>   
+<div id='container4'>	  
+<div id='map'>
+</div>
+</div>
+  
+<div id='container5'>
+<div id='info2'>
+<p>With the birth of the Industrial Revolution in that period the sea network of Mumbai encouraged the British to set up Mills, Factories, Industries to turn Mumbai into one of the major ports in India which it still is. Textiles, silk, muslin, rice cotton, tobacco were the main things being Traded through these Docks. The ports (highlighted in magenta) were not only utilized to ship the products produced in Mumbai, but also as a major node in the International sea network to trade products from one part of the world to another via Mumbai Harbor. But to run these industries a lot of manpower and resources were required so they started recruiting and hiring people from all over the country to work in these mills and housed them near the ports.Within no time Mumbai had become a Business and Economic Hub which also meant that the city & it’s network needed to grow to accommodate this mass inflow of immigrants. Population in 1945 was 1.7 million and in 2017 it is 18.4 million.The chart below shows the rapid growth in population over centuries compared to other majoe cities in India.
+Also factors like rapidly increasing job opportunities ,growth of the Media industry, the architecture and the history of the city accelerated the migration of people from all over the country to Mumbai city.</p>
+<p>The city had a ready infrastructure in terms of these mills, factories, industries, docks, warehouses and railway network which was then developed and extended toward the North which is now known as Mumbai suburbs highlighted in red and towards the East which is known as New Mumbai (sister city to Mumbai)highlighted in green in the map above.Today Mumbai is the 4th most populous city in the world and the wealthiest city in India. It has become the Business/ Trade/ Economic & Commercial Capital of India.</p>
+  <p>Being an island with only Trading purposes during the British era the city was not planned in terms of appropriate roadways and other basic amenities since it had very limited land-mass available .Since ,people starting migrating to Mumbai Post-Independence the population of the city increased rapidly but the land-mass has remained the same, which is not enough to sustain this kind of population. This has resulted in Mumbai becoming one of the most dense and congested cities in the entire world.Mumbai already being at a saturation point fails to accommodate and plan the appropriate infrastructure (Roads ,Highways ,Drainage ,Residential Blocks) and Network that has cramped the city even further. The city is said to be a verge of imploding.</p>
+  </div>
+</div>  
+    
+<div id="container6" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+<div id='container7'>  
+<div id='info3'>
+<p>Since the city still continues to grow rapidly in terms of population every year, the government and real estate community aims to REDEVELOPE the city by building high-rises (Vertical Growth) which might ideally fit in a modern day Megapolis’s image but it does not solve the urban problems within the city in terms of Density, Planned sewage and road systems, etc. As a matter of fact it will deteriorate the quality of life within the city even more. With continuous inflow of immigrants in the city everyday, the demand for Residences in the city keeps on rising in the core of the city and with soaring real-estate prices due to the city’s image and global status, the people are struggling economically to afford a house in the core of the city and hence majority of them resort to living in slums and illegal shanties that are deteriorating the living conditions in the city.</p>
+  </div>
+
+<div id='container8'>
+  <div id='container9'>
+ <img src="heatmap.png" alt="heatmap" >    
+</div> 
+  <div id='container10'>
+   <div class='tableauPlaceholder' id='viz1554950176054' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;C8&#47;C8B4TDQ3G&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;C8B4TDQ3G' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;C8&#47;C8B4TDQ3G&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1554950176054');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.minWidth='600px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='450px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> 
+  </div>
+  </div>
+  </div>
+     
+ </head>
+<body>
+
+<script>
+
+
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+	var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
+		streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
+
+	var map = L.map('map', {
+		center: [19.151708, 72.881847],
+		zoom: 10,
+		layers: [grayscale,]
+	});
+    
+    
+    var roads = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+});
+
+var topography = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});	
+    
+var latlngs = [[18.881599842885777,72.8005599975586],[18.882574385034626,72.80364990234375],[18.88517313637975,72.80502319335938],[18.887771847403325,72.8067398071289],[18.88907118779305,72.80948638916016],[18.894918094771626,72.81394958496092],[18.899790361256617,72.81841278076172],[18.9056368937955,72.81909942626953],[18.90823528712194,72.82047271728516],[18.90823528712194,72.8232192993164],[18.909209674213418,72.82596588134766],[18.9127823783159,72.8287124633789],[18.91830367997407,72.83317565917969],[18.92187618976372,72.83557891845703],[18.92057710412903,72.83798217773438],[18.920252331142763,72.84038543701172],[18.923824799283608,72.8396987915039],[18.92642290996703,72.83832550048828],[18.929020980254013,72.83592224121094],[18.929345736199277,72.83935546875],[18.92999524619596,72.84347534179688],[18.936165465210617,72.8445053100586],[18.945258004022264,72.84622192382812],[18.952077083117892,72.84690856933594],[18.96019467106038,72.84931182861328],[18.96668845695318,72.85102844238281],[18.970909282152192,72.85102844238281],[18.976103997203953,72.85411834716797],[18.980324583939787,72.85961151123047],[18.98259716327757,72.86029815673827],[18.986817585497494,72.85858154296875],[18.991687170532202,72.85720825195312],[18.992336437775784,72.85961151123047],[18.996231988057502,72.86235809326172],[19.000452064638484,72.86235809326172],[19.003698204565687,72.86544799804688],[19.004996642802364,72.86991119384766],[19.00629507090433,72.87849426269531],[19.00954109681601,72.88330078125],[19.01668213079985,72.8829574584961],[19.01927879438547,72.87883758544922],[19.02674397621969,72.8778076171875],[19.03323516605329,72.87918090820312],[19.041673333563583,72.87918090820312],[19.049786551705495,72.87574768066406],[19.05205818170657,72.87403106689453],[19.054005268380948,72.86579132080078],[19.05660134839733,72.85961151123047],[19.053356242028606,72.85686492919922],[19.05205818170657,72.84587860107422],[19.049137508850016,72.83592224121094],[19.043945074620254,72.83695220947264],[19.037129758188268,72.83832550048828],[19.028366797457245,72.83489227294922],[19.020252532772236,72.8290557861328],[19.020252532772236,72.82356262207031],[19.024147429270254,72.81841278076172],[19.02122626545435,72.81566619873047],[19.015708371498114,72.81566619873047],[19.010514892235747,72.81532287597656],[19.004347424950833,72.81257629394531],[18.99947821031074,72.81051635742188],[18.993310333893152,72.8122329711914],[18.98876543660155,72.8115463256836],[18.983571116359307,72.81291961669922],[18.979350611875443,72.81120300292969],[18.978051973598657,72.80845642089844],[18.975454666678132,72.80467987060547],[18.97220797609552,72.80330657958984],[18.96214283338193,72.8005599975586],[18.956298278146946,72.79644012451172],[18.95337592373313,72.79232025146484],[18.94915465476712,72.79197692871094],[18.944283827121534,72.79232025146484],[18.94006232819141,72.79232025146484],[18.939737593083155,72.79438018798828],[18.942984915743484,72.79472351074219],[18.94785578129413,72.79712677001953],[18.950778232391926,72.80227661132812],[18.954350047559018,72.80708312988281],[18.95337592373313,72.81291961669922],[18.94850521929427,72.81909942626953],[18.940387062668094,72.8232192993164],[18.932268511298073,72.8225326538086],[18.92642290996703,72.81909942626953],[18.91635500609067,72.8118896484375],[18.913107165813283,72.80708312988281],[18.90823528712194,72.80433654785156],[18.902388845383545,72.80364990234375],[18.898815919306525,72.80433654785156],[18.895567738497544,72.80536651611328],[18.891020179473415,72.80570983886717],[18.88972085420715,72.80364990234375],[18.88484829466659,72.8009033203125],[18.881599842885777,72.8005599975586]];
+var oldmumbai = L.polygon(latlngs, {color: 'orange', weight: '2', fillColor:'orange', fillOpacity:'0.2'}).bindPopup("OLD MUMBAI").addTo(map);  
+
+var latlngs = [[19.009338222052527,72.88334369659422],[19.00629507090433,72.88467407226562],[19.001101297690546,72.88501739501953],[18.995582736008494,72.88604736328125],[18.993310333893152,72.8891372680664],[18.995258109034264,72.89806365966797],[18.995258109034264,72.91007995605469],[19.002724369237626,72.92243957519531],[19.010514892235747,72.9323959350586],[19.018629632291812,72.9433822631836],[19.02577027586866,72.95333862304688],[19.038103391950255,72.95951843261719],[19.05043559202223,72.96226501464842],[19.061468888907847,72.96089172363281],[19.070230101751978,72.95883178710938],[19.087102243723283,72.95677185058594],[19.09975522215211,72.95814514160156],[19.11046083285372,72.96089172363281],[19.123760777665353,72.96672821044922],[19.132194334419058,72.97222137451172],[19.139978773834496,72.97496795654297],[19.153600659533144,72.97840118408203],[19.164302780710294,72.98046112060547],[19.18084105599502,72.98355102539062],[19.187974701410948,72.98286437988281],[19.192514133031565,72.9825210571289],[19.200944173892672,72.98629760742188],[19.208725366706986,72.99144744873047],[19.21391262405755,72.9825210571289],[19.21391262405755,72.96432495117188],[19.224935002465042,72.94715881347656],[19.2301217482413,72.93445587158203],[19.236604950140514,72.90321350097656],[19.24859819877131,72.87420272827148],[19.25054296731561,72.86888122558594],[19.255566846019832,72.86424636840819],[19.263507501734075,72.85343170166016],[19.266100285620677,72.84725189208984],[19.266748475184716,72.8422737121582],[19.263831601962472,72.83832550048828],[19.26010441065498,72.8364372253418],[19.255404787818094,72.83523559570312],[19.254756553409987,72.82613754272461],[19.254756553409987,72.8034782409668],[19.251839466871758,72.79077529907227],[19.247787871741338,72.78356552124023],[19.24470859253356,72.78099060058594],[19.239846455102022,72.78030395507812],[19.236604950140514,72.7785873413086],[19.233039220768845,72.77996063232422],[19.22995966491469,72.77978897094727],[19.226880051321817,72.77755737304688],[19.224772914020885,72.77532577514648],[19.221369019757613,72.77669906616211],[19.218937623544015,72.77807235717773],[19.216019900608558,72.78099060058594],[19.21164321910282,72.78081893920898],[19.210184299376877,72.77875900268553],[19.207266421093944,72.77755737304688],[19.20742852680121,72.77532577514648],[19.204996924415823,72.77549743652344],[19.20402427339623,72.77944564819336],[19.20483481631196,72.78202056884766],[19.202403175583004,72.78459548950195],[19.201430509227116,72.78322219848633],[19.200133611807193,72.78081893920898],[19.196891323533883,72.78081893920898],[19.193811090502095,72.78133392333984],[19.19283837335729,72.78425216674805],[19.19267625327426,72.7924919128418],[19.19105504366189,72.79558181762695],[19.187164075450056,72.79592514038086],[19.1826244963194,72.79609680175781],[19.17776052267816,72.79455184936522],[19.172734265705472,72.7928352355957],[19.169653580810245,72.78888702392578],[19.167221420478928,72.78596878051758],[19.167870000076427,72.78081893920898],[19.16624854629771,72.78047561645508],[19.163654187077732,72.78133392333984],[19.1621948420753,72.78322219848633],[19.159600419067544,72.78287887573242],[19.156357332907834,72.78339385986328],[19.15376281806577,72.78305053710938],[19.15230338553375,72.78648376464844],[19.14954664441439,72.78854370117188],[19.145816862529625,72.78820037841797],[19.142735674783104,72.78579711914062],[19.139005738977747,72.78390884399414],[19.138519219398813,72.78579711914062],[19.133816122892874,72.78665542602538],[19.129599439736836,72.7910327911377],[19.133167409414444,72.80116081237793],[19.135762248038436,72.80811309814453],[19.130896892173755,72.81206130981445],[19.12635576406013,72.81472206115723],[19.121327940907662,72.81721115112305],[19.115813378335723,72.82047271728516],[19.109325422142806,72.82279014587402],[19.102512794185653,72.82407760620117],[19.093915506143606,72.82613754272461],[19.084587754619236,72.82450675964355],[19.07688182444204,72.82064437866211],[19.072744808793335,72.82167434692383],[19.06909441509726,72.82210350036621],[19.06560618600473,72.82261848449707],[19.059116262165833,72.82115936279297],[19.057980499379653,72.82244682312012],[19.055222185947514,72.82407760620117],[19.052463826648214,72.8217601776123],[19.046135652622056,72.81867027282715],[19.042809207978163,72.81721115112305],[19.041916735878146,72.82004356384277],[19.04435073939442,72.82596588134766],[19.048407332603105,72.83188819885254],[19.049259204578807,72.83579349517822],[19.052139310774244,72.84562110900879],[19.053356242028606,72.8567361831665],[19.05676360204929,72.85952568054199],[19.054167524572268,72.86527633666992],[19.05230156879058,72.87385940551758],[19.050516721883312,72.87540435791016],[19.041632766476468,72.8792667388916],[19.03307288939896,72.87922382354736],[19.02674397621969,72.87797927856445],[19.019238221828896,72.87888050079346],[19.01668213079985,72.88304328918457],[19.009338222052527,72.88334369659422]];
+var suburbs = L.polygon(latlngs, {color: 'red', weight: '2', fillColor:'red', fillOpacity:'0.2'}).bindPopup("MUMBAI SUBURBS").addTo(map);  
+
+var latlngs = [[19.1902444328681,72.98561096191405],[19.182786626300352,72.9873275756836],[19.174355655675658,72.9873275756836],[19.149060155906035,72.98389434814453],[19.120192604830592,72.97943115234375],[19.120192604830592,72.9777145385742],[19.11046083285372,72.97908782958984],[19.103972666654478,72.97943115234375],[19.101377328914513,72.98320770263672],[19.093915506143606,72.98526763916014],[19.08547999705885,72.9880142211914],[19.08191099845767,72.99007415771484],[19.075421713066486,72.98526763916014],[19.070230101751978,72.982177734375],[19.06438934463442,72.98423767089844],[19.05822387777432,72.99385070800781],[19.04848846345587,72.9983139038086],[19.02998960284281,73.00312042236328],[19.01830505029428,73.00174713134766],[19.007918091778937,73.00106048583983],[19.002075142518798,73.0038070678711],[18.998828970925903,73.01101684570312],[19.00077668148117,73.0209732055664],[19.003698204565687,73.02921295166016],[19.005321250778007,73.03779602050781],[19.013760835784385,73.04363250732422],[19.018954213655554,73.0539321899414],[19.015708371498114,73.0594253540039],[19.0082426940534,73.06285858154297],[19.005645858120225,73.06629180908203],[19.00597046482899,73.07624816894531],[19.00467203419329,73.08277130126953],[18.999802829053262,73.08895111083984],[18.991362535960846,73.09513092041016],[18.986168296732817,73.10199737548827],[18.978701294002402,73.10920715332031],[18.976753325199365,73.11607360839844],[18.978701294002402,73.12259674072266],[18.982272510984753,73.12534332275389],[18.98876543660155,73.1301498413086],[18.990713264919044,73.12946319580078],[18.99688123757382,73.12877655029297],[18.996231988057502,73.13873291015625],[19.008891896701762,73.15143585205078],[19.023822858048653,73.16585540771484],[19.03875247795315,73.17752838134766],[19.05660134839733,73.18817138671874],[19.06471383653978,73.18233489990234],[19.068932173511342,73.17203521728516],[19.079639777486495,73.15727233886719],[19.092293326239535,73.14697265625],[19.167870000076427,73.08345794677734],[19.17176142406545,73.05633544921875],[19.182786626300352,73.037109375],[19.193486852092565,73.02680969238281],[19.19997149891089,73.02268981933594],[19.20807694803239,73.01788330078125],[19.216506191361127,73.01136016845703],[19.21780295966795,73.004150390625],[19.216181997685922,72.99934387207031],[19.210994811933805,72.9986572265625],[19.20678010301349,72.9986572265625],[19.202565286083214,72.99453735351562],[19.19737767084767,72.9876708984375],[19.1902444328681,72.98561096191405]];
+var newmumbai= L.polygon(latlngs, {color: 'green', weight: '2', fillColor:'green', fillOpacity:'0.2'}).bindPopup("NAVI MUMBAI").addTo(map);     
+
+var Mumbaigrowth = L.layerGroup([oldmumbai,suburbs,newmumbai])
+
+var latlngs =[[51.508742458803326,0.3515625],[51.01375465718821,1.318359375],[50.00773901463687,0],[49.38237278700955,-4.74609375],[46.619261036171515,-9.580078125],[42.09822241118974,-12.041015625],[37.996162679728116,-11.865234375],[35.817813158696616,-10.1953125],[35.67514743608467,-7.3828125],[35.67514743608467,-4.658203125],[36.80928470205937,2.8125],[38.685509760012,7.470703125],[37.37015718405753,11.074218749999998],[34.813803317113155,13.53515625],[33.7243396617476,16.5234375],[32.99023555965106,25.6640625],[32.76880048488168,30.05859375],[30.372875188118016,32.783203125],[25.562265014427492,35.244140625],[19.31114335506464,38.935546875],[14.774882506516272,41.220703125],[12.382928338487396,43.9453125],[11.523087506868514,46.318359375],[11.953349393643416,51.943359375],[13.068776734357694,64.248046875],[14.774882506516272,69.345703125],[16.29905101458183,71.279296875],[18.35452552912664,72.5921630859375],[18.898491104062323,72.84759521484375],[18.938113908068473,72.86338806152344],[18.964740347740076,72.850341796875]];
+var suezcanal= L.polyline(latlngs, {color: 'blue', weight: '2', fillOpacity:'0.2'}).bindPopup("NAVI MUMBAI").addTo(map);     
+
+var latlngs=[[18.934338779385214,72.83716678619385],[18.933364538775912,72.84223079681395],[18.92914276380747,72.84291744232178],[18.92930514174065,72.8442907333374],[18.935394200299093,72.84360408782959],[18.947774601366422,72.84669399261475],[18.950494107447913,72.84643650054932],[18.965227377177385,72.84961223602295],[18.96908297667378,72.85059928894043],[18.972492064046662,72.8501272201538],[18.972248560118185,72.85356044769287],[18.973790745656316,72.85429000854492],[18.975495249910125,72.85579204559326],[18.977646147061236,72.85544872283936],[18.97849838164808,72.85553455352783],[18.979715852066878,72.85021305084229],[18.978620129090334,72.84901142120361],[18.970625191503164,72.84780979156493],[18.964131558942885,72.84626483917236],[18.961452861829198,72.84514904022217],[18.9598293880915,72.84424781799316],[18.95808413619762,72.84463405609131],[18.95788119874571,72.84549236297607],[18.956217102326722,72.84514904022217],[18.956420041803234,72.84411907196045],[18.94923583402353,72.8422737121582],[18.94915465476712,72.8408145904541],[18.934338779385214,72.83716678619385]];
+var mumbaiharbor= L.polygon(latlngs, {color: 'purple', weight: '2', fillColor:'purple', fillOpacity:'0.2'}).bindPopup("NAVI MUMBAI").addTo(map);     
+  
+    var baseLayers = {
+		"Grayscale": grayscale,
+        "RoadMap": roads,
+        "Topography": topography
+	};
+
+	var overlays = {
+    "Mumbai growth": Mumbaigrowth ,
+      "Sea Network through Suez Canal 1869": suezcanal ,
+      "Mumbai Harbor": mumbaiharbor
+       };
+
+	L.control.layers(baseLayers, overlays).addTo(map);
+
+Highcharts.chart('container6', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Major Indian cities Population growth over time '
+    },
+
+    xAxis: {
+        categories: ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Ahmedabad'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Population (thousands)',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' thousands'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'bottom',
+        x: -40,
+        y: -60,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Year 1800',
+        data: [235, 145, 78, 203, 97]
+    }, {
+        name: 'Year 1900',
+        data: [813, 215, 163, 509, 185]
+    }, {
+        name: 'Year 2000',
+        data: [16368, 15692, 5581, 4343, 4525]
+    }, {
+        name: 'Year 2016',
+        data: [20185, 25865, 11882, 10711, 7868]
+    }]
+});
+
+
+
+</script>
+
+</body>
+</html>
